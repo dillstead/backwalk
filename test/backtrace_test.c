@@ -27,7 +27,6 @@ typedef struct {
 bool validate_backtrace(uintptr_t addr, const char* fname, const char* sname, void* arg) {
     BW_UNUSED(addr);
     BW_UNUSED(fname);
-
     context_t* ctx = arg;
     size_t fnum = ctx->fnum++;
 
