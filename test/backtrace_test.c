@@ -27,6 +27,7 @@ typedef struct {
 bool validate_backtrace(uintptr_t addr, const char* fname, const char* sname, void* arg) {
     BW_UNUSED(addr);
     BW_UNUSED(fname);
+
     context_t* ctx = arg;
     size_t fnum = ctx->fnum++;
 
@@ -46,7 +47,7 @@ bool stop_after_n_frames_cb(uintptr_t addr, const char* fname, const char* sname
     BW_UNUSED(addr);
     BW_UNUSED(fname);
     BW_UNUSED(sname);
-    
+
     stop_context_t* ctx = arg;
     ++ctx->fnum;
     if (ctx->fnum == ctx->fnum_max) {
